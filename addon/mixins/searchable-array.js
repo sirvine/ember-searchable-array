@@ -10,7 +10,7 @@ export default Ember.Mixin.create({
 	concatenatedProperties: ['searchProperties'],
 	searchProperties: required(Array),
 	searchTerm: required(String),
-	searchableContent: computed.any('arrangedContent', 'content'),
+	searchableContent: computed.or('arrangedContent', 'content'),
 	searchedContent: computed.oneWay('searchableContent'),
 	searchResult: null,
 	searchOptions: function() {
